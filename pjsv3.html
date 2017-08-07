@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Todo List</title>
+	<meta name="Practical JavaScript" content="Todo List">
+	<meta name="Rossi Meacham" content="NerpdyDerp">
+	<link rel="stylesheet" href="pjsv3.css">
+	<!--link rel="stylesheet" href="https://unpkg.com/todomvc-app-css@2.0.4/index.css"-->
+</head>
+<body>
+<header>
+	<nav></nav>
+</header>
+<main>
+	<h1>Todo List</h1>
+
+	<div>
+		<button onclick="handlers.toggleAll()">Toggle All</button>
+	</div>
+
+	<div>
+		<button onclick="handlers.addTodo()">Add</button>
+		<input id="addTodoTextInput" type="text">
+	</div>
+
+	<div>
+		<button onclick="handlers.changeTodo()">Change Todo</button>
+		<input id="changeTodoPositionInput" type="number">
+		<input id="changeTodoTextInput" type="text">
+	</div>
+
+	<div>
+		<button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+		<input id="toggleCompletedPositionInput" type="number">
+	</div>
+
+	<ul>
+	</ul>
+
+</main>
+<footer></footer>
+<script src="pjsv3.js"></script>
+</body>
+</html>
