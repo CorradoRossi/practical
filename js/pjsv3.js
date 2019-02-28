@@ -67,6 +67,15 @@ var handlers = {
   }
 };
 
+var addInput = document.getElementById('addTodoTextInput');
+
+addInput.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("addButton").click();
+  }
+});
+
 var view = {
   displayTodos: function() {
     var todosUl = document.querySelector('ul');
@@ -84,10 +93,17 @@ var view = {
       }
       todoLi.id = position;
       todoLi.textContent = todoTextWithCompletion;
+      todoLi.appendChild(this.createCheckbox());
       todoLi.appendChild(this.createDeleteButton());
       todosUl.appendChild(todoLi);
     }, this);
   },
+  createCheckbox: function() {
+    var checkBox = document.createElement('label');
+    checkBox.className = 'form-checkbox';
+    return checkBox;
+  },
+
   createDeleteButton: function() {
     var deleteButton = document.createElement('button');
     deleteButton.className = 'deleteButton btn btn-clear float-right';

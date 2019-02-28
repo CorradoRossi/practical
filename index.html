@@ -7,6 +7,7 @@
 	<meta name="Practical JavaScript" content="Todo List">
 	<meta name="Rossi Meacham" content="NerpdyDerp">
 	<link rel="stylesheet" href="css/spectre.css">
+	<link rel="stylesheet" href="css/spectre-icons.css">
 	<link rel="stylesheet" href="css/style.css">
 	<!--link rel="stylesheet" href="https://unpkg.com/todomvc-app-css@2.0.4/index.css"-->
 </head>
@@ -25,47 +26,47 @@
 </header>
 
 <section class="container columns">
-	<div class="col-2"></div>
-	<div class="col-8">
-
-	<!--div>
-		<button class="btn btn-primary" onclick="handlers.addTodo()">Add</button>
-		<input id="addTodoTextInput" type="text">
-	</div-->
-
+	<div class="col-3"></div>
+	<div class="col-6">
+	
+	<div class="todo-container p-centered">
 	<div class="input-group">
 		<span class="input-group-addon">...</span>
 		<input id="addTodoTextInput" type="text" class="form-input" placeholder="todo">
-		<button class="btn btn-primary input-group-btn" onclick="handlers.addTodo()">Add</button>
+		<button id="addButton" class="btn btn-primary input-group-btn" onclick="handlers.addTodo()">Add</button>
 	</div>
 
-	<div>
+	<div class="hero hero-sm bg-dark text-left">
+			<ul>
+				
+				<div id="clonable" class="toast toast-primary" style="display: none;">
+				<label id="checkboxLabel" class="form-checkbox float-left">
+					<input id="checkboxId" type="checkbox">
+					<i class="form-icon"></i>
+				</label>
+				 <button class="deleteButton btn btn-clear float-right"></button>
+				</div>
+	
+			</ul>
+		</div>
+
+	<div class="input-group">
+			<button class="btn btn-primary"><i class="icon icon-resize-vert"></i></button>
+		<input id="changeTodoPositionInput" type="number" placeholder="0">
+		<input id="changeTodoTextInput" type="text" placeholder="text">
 		<button class="btn btn-primary" onclick="handlers.changeTodo()">Change Todo</button>
-		<input id="changeTodoPositionInput" type="number">
-		<input id="changeTodoTextInput" type="text">
 	</div>
 
-	<div>
+	<div class="input-group">
+		<button class="btn btn-primary"><i class="icon icon-resize-vert"></i></button>
+		<input id="toggleCompletedPositionInput" type="number" placeholder="0">
 		<button class="btn btn-primary" onclick="handlers.toggleCompleted()">Toggle Completed</button>
-		<input id="toggleCompletedPositionInput" type="number">
-	</div>
-
-	<div>
 		<button class="btn btn-primary" onclick="handlers.toggleAll()">Toggle All</button>
 	</div>
-
-	<div class="empty text-left">
-		<ul>
-			
-		</ul>
-	</div>
-
-	<!--div class="card">
-		<ul>
-		</ul>
-	</div-->
 </div>
-<div class="col-2"></div>
+
+</div>
+<div class="col-3"></div>
 
 </section>
 
@@ -80,6 +81,6 @@
 </footer>
 
 </div>
-<script src="js/pjsv3.js"></script>
+<script src="js/todo.js"></script>
 </body>
 </html>
