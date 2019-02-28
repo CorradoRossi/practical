@@ -73,7 +73,8 @@ var view = {
     todosUl.innerHTML = '';
 
     todoList.todos.forEach(function(todo, position) {
-      var todoLi = document.createElement('li');
+      var todoLi = document.createElement('div');
+      todoLi.className = 'toast toast-primary';
       var todoTextWithCompletion = '';
 
       if (todo.completed === true) {
@@ -89,8 +90,7 @@ var view = {
   },
   createDeleteButton: function() {
     var deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.className = 'deleteButton';
+    deleteButton.className = 'deleteButton btn btn-clear float-right';
     return deleteButton;
   },
   setUpEventListeners: function() {
@@ -100,7 +100,7 @@ var view = {
 
       var elementClicked = event.target;
 
-      if (elementClicked.className === 'deleteButton') {
+      if (elementClicked.className === 'deleteButton btn btn-clear float-right') {
         handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
       }
     });

@@ -6,41 +6,80 @@
 	<title>Todo List</title>
 	<meta name="Practical JavaScript" content="Todo List">
 	<meta name="Rossi Meacham" content="NerpdyDerp">
-	<link rel="stylesheet" href="pjsv3.css">
+	<link rel="stylesheet" href="css/spectre.css">
+	<link rel="stylesheet" href="css/style.css">
 	<!--link rel="stylesheet" href="https://unpkg.com/todomvc-app-css@2.0.4/index.css"-->
 </head>
 <body>
-<header>
-	<nav></nav>
+	<div class="body-container">
+<header class="columns">
+	<div class="col-2"></div>
+	<nav class="col-8 navbar">
+		<section class="navbar-section"></section>
+		<section class="navbar-center">
+			<h1>Todo List</h1>
+		</section>
+		<section class="navbar-section"></section>
+	</nav>
+	<div class="col-2"></div>
 </header>
-<main>
-	<h1>Todo List</h1>
 
-	<div>
-		<button onclick="handlers.toggleAll()">Toggle All</button>
-	</div>
+<section class="container columns">
+	<div class="col-2"></div>
+	<div class="col-8">
 
-	<div>
-		<button onclick="handlers.addTodo()">Add</button>
+	<!--div>
+		<button class="btn btn-primary" onclick="handlers.addTodo()">Add</button>
 		<input id="addTodoTextInput" type="text">
+	</div-->
+
+	<div class="input-group">
+		<span class="input-group-addon">...</span>
+		<input id="addTodoTextInput" type="text" class="form-input" placeholder="todo">
+		<button class="btn btn-primary input-group-btn" onclick="handlers.addTodo()">Add</button>
 	</div>
 
 	<div>
-		<button onclick="handlers.changeTodo()">Change Todo</button>
+		<button class="btn btn-primary" onclick="handlers.changeTodo()">Change Todo</button>
 		<input id="changeTodoPositionInput" type="number">
 		<input id="changeTodoTextInput" type="text">
 	</div>
 
 	<div>
-		<button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+		<button class="btn btn-primary" onclick="handlers.toggleCompleted()">Toggle Completed</button>
 		<input id="toggleCompletedPositionInput" type="number">
 	</div>
 
-	<ul>
-	</ul>
+	<div>
+		<button class="btn btn-primary" onclick="handlers.toggleAll()">Toggle All</button>
+	</div>
 
-</main>
-<footer></footer>
-<script src="pjsv3.js"></script>
+	<div class="empty text-left">
+		<ul>
+			
+		</ul>
+	</div>
+
+	<!--div class="card">
+		<ul>
+		</ul>
+	</div-->
+</div>
+<div class="col-2"></div>
+
+</section>
+
+<footer>
+	<div class="columns">
+		<div class="col-3"></div>
+		<div class="col-6">
+			<p></p>
+		</div>
+		<div class="col-3"></div>
+	</div>
+</footer>
+
+</div>
+<script src="js/pjsv3.js"></script>
 </body>
 </html>
